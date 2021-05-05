@@ -1,16 +1,16 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: sync-1
+  name: sync-2
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   template:
     spec:
       containers:
       - name: sleep
         image: alpine:latest
-        command: ['sh', '-c', 'sleep 5; echo sync-1']
+        command: ['sh', '-c', 'sleep 5; echo sync-2']
       restartPolicy: Never
   backoffLimit: 0
